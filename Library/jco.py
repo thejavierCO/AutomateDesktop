@@ -102,13 +102,7 @@ class Numbersbuffer:
         for icon in listNumbers:
             self.basic.add(icon)
     def get(self,number):
-        datalist = []
-        if number <= 9:
-            datalist.append(self.Render(self.basic.get(number)))
-        else:
-            for n in range(len(str(number))):
-                datalist.append(self.Render(self.basic.get(str(number)[n])))
-        return datalist
+        return self.basic.get(number)
     def Render(self,number,w,h):
-        return framebuf.FrameBuffer(number,w,h,framebuf.MONO_HLSB)
+        return framebuf.FrameBuffer(self.get(number),w,h,framebuf.MONO_HLSB)
         
