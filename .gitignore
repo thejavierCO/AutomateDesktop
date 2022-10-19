@@ -1,1 +1,4 @@
 default/env.py
+font/*.jpg
+font/*.pbm
+font/*.bat
