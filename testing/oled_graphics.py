@@ -14,8 +14,8 @@ for archivo in lista:
         numberBuffer.append(bytearray(f.read()))
     f.close()
 def printNumber(number,posy=0,posx=0):
-    w=23
-    h=16
+    w=24
+    h=32
     fbuf = framebuf.FrameBuffer(numberBuffer[0],w,h,framebuf.MONO_HLSB)
     if number == 1:
         fbuf = framebuf.FrameBuffer(numberBuffer[1],w,h,framebuf.MONO_HLSB)
@@ -35,18 +35,26 @@ def printNumber(number,posy=0,posx=0):
         fbuf = framebuf.FrameBuffer(numberBuffer[8],w,h,framebuf.MONO_HLSB)
     if number == 9:
         fbuf = framebuf.FrameBuffer(numberBuffer[9],w,h,framebuf.MONO_HLSB)
-    oled.framebuf.blit(fbuf,int(posy*25),int(posx*16))
+    oled.framebuf.blit(fbuf,int(posy*w),int(posx*h))
 while True:
     oled.fill(0)
-    printNumber(0,0,1);
-    printNumber(1,0,0);
-    printNumber(2,1,1);
+    printNumber(4,0,0);
     printNumber(3,1,0);
-    printNumber(4,2,1);
-    printNumber(5,2,0);
-    printNumber(6,3,1);
-    printNumber(7,3,0);
-    printNumber(8,4,1);
-    printNumber(9,4,0);
+    printNumber(2,2,0);
+    printNumber(1,3,0);
     oled.show()
-    time.sleep(2)
+    time.sleep(3)
+    oled.fill(0)
+    printNumber(8,0,0);
+    printNumber(7,1,0);
+    printNumber(6,2,0);
+    printNumber(5,3,0);
+    oled.show()
+    time.sleep(3)
+    oled.fill(0)
+    printNumber(0,0,0);
+    printNumber(0,1,0);
+    printNumber(0,2,0);
+    printNumber(9,3,0);
+    oled.show()
+    time.sleep(3)
