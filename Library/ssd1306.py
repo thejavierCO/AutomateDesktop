@@ -100,7 +100,9 @@ class SSD1306:
 
     def text(self, string, x, y, col=1):
         self.framebuf.text(string, x, y, col)
-        
+    def graphic(self,bytearray,x,y):
+        self.framebuf.blit(bytearray,x,y)
+    
     def println(self, string,col=1):
         self.fill(0)
         pos = 0;
