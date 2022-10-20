@@ -15,12 +15,10 @@ except:
 try:
     oled = SSD1306_I2C(128, 32, I2C(0,scl=Pin(22), sda=Pin(21)))
     oled.fill(0)
-    oled.invert(False)
+    oled.invert(True)
     oled.contrast(1)
-    oled.text("init",int((128/2)-40),int((32/2)-10))
     oled.show()
-    time.sleep(2)
-    oled.fill(0)
+    time.sleep(1)
 except:
     print("not fount display")
 
@@ -49,11 +47,13 @@ numbers = Numbersbuffer([
 ])
 
 if oled:
+    oled.invert(False)
     oled.fill(0)
     oled.contrast(1)
     oled.graphic(numbers.Render(str(wifi.ifconfig()[0].split(".")[3])[0],24,32),4*24,0)
     oled.graphic(numbers.Render(str(wifi.ifconfig()[0].split(".")[3])[1],24,32),3*24,0)
     oled.graphic(numbers.Render(str(wifi.ifconfig()[0].split(".")[3])[2],24,32),2*24,0)
     oled.show()
+    time.sleep(2)
 else:
     print(wifi.ifconfig()[0].split(".")[3])
