@@ -5,13 +5,6 @@ from env import page_realtime
 
 rtc = RTC()
 
-try:
-    import _thread
-    thread_available = True
-except:
-    thread_available = False
-
-
 def clock(arg, intervalo_peticiones=60, ultima_peticion=0):
     try:
         while True:
@@ -47,7 +40,3 @@ def clock(arg, intervalo_peticiones=60, ultima_peticion=0):
         oled.text("Error",0,0)
         oled.show()
         utime.sleep(3)
-
-
-if thread_available:
-    _thread.start_new_thread(clock, ('',))
