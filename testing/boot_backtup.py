@@ -34,16 +34,16 @@ else:
 webrepl.start()
 
 numbers = Numbersbuffer([
-    "assets/0.pbm",
-    "assets/1.pbm",
-    "assets/2.pbm",
-    "assets/3.pbm",
-    "assets/4.pbm",
-    "assets/5.pbm",
-    "assets/6.pbm",
-    "assets/7.pbm",
-    "assets/8.pbm",
-    "assets/9.pbm"
+    "0.pbm",
+    "1.pbm",
+    "2.pbm",
+    "3.pbm",
+    "4.pbm",
+    "5.pbm",
+    "6.pbm",
+    "7.pbm",
+    "8.pbm",
+    "9.pbm"
 ])
 
 if oled:

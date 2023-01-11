@@ -1,9 +1,9 @@
 import network,  urequests
 import utime
 from machine import RTC, Pin, I2C
-from ssd1306 import SSD1306_I2C
-from jco import Numbersbuffer
-from env import page_realtime
+from ..modules.ssd1306 import SSD1306_I2C
+from ..modules.jco import Numbersbuffer
+from ..modules.env import page_realtime
 
 oled = SSD1306_I2C(128, 32, I2C(0,scl=Pin(22), sda=Pin(21)))
 rtc = RTC()
